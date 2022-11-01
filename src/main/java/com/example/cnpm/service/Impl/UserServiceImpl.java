@@ -81,4 +81,9 @@ public class UserServiceImpl implements UserService {
         }
         return isCorrentConfirmPassword;
     }
+
+    @Override
+    public User findByUsername(String user) {
+        return userRepository.findByUsername(user);
+    }
 }

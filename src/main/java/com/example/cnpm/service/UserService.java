@@ -51,4 +51,6 @@ public interface UserService extends UserDetailsService {
 
     boolean isCorrectConfirmPassword(User user);
 
+    User findByUsername(String user);
+
 }

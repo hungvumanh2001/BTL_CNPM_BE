@@ -1,13 +1,20 @@
 package com.example.cnpm.controller;
 
+import com.example.cnpm.model.JwtResponse;
 import com.example.cnpm.model.Role;
 import com.example.cnpm.model.User;
+import com.example.cnpm.service.Impl.JwtService;
 import com.example.cnpm.service.RoleService;
 import com.example.cnpm.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,6 +32,12 @@ public class UserController {
 
     @Autowired
     private RoleService roleService;
+
+    @Autowired
+    private AuthenticationManager authenticationManager;
+    @Autowired
+    private JwtService jwtService;
+
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -83,5 +96,18 @@ public class UserController {
         user.setConfirmPassword(passwordEncoder.encode(user.getConfirmPassword()));
         userService.save(user);
         return new ResponseEntity<>(user, HttpStatus.CREATED);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody User user) {
+        Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
+
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+
+        String jwt = jwtService.generateTokenLogin(authentication);
+        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+        User currentUser = userService.findByUsername(user.getUsername());
+        return ResponseEntity.ok(new JwtResponse(jwt, (long) currentUser.getId(), userDetails.getUsername(), userDetails.getAuthorities()));
     }
 }
