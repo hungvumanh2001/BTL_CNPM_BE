@@ -19,9 +19,6 @@ public class CartController {
     @Autowired
     private CartService service;
 
-    @Autowired
-    private UserService userService;
-
     @PutMapping("/confirm")
     public ResponseEntity confirmOrder(@RequestParam Long id) {
         Optional<Cart> carts = service.findById(id);
