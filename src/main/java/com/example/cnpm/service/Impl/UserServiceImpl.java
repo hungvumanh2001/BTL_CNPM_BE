@@ -6,6 +6,8 @@ import com.example.cnpm.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
@@ -13,5 +15,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public Iterable<User> findAllByUserNameContain(String username) {
         return repository.findAllByUsernameContaining(username);
+    }
+
+    @Override
+    public Optional<User> findById(Integer id) {
+        return repository.findById(id);
     }
 }
