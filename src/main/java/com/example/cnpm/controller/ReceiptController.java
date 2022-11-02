@@ -1,0 +1,34 @@
+package com.example.cnpm.controller;
+
+import com.example.cnpm.model.Receipt;
+import com.example.cnpm.service.ReceiptService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.logging.Logger;
+
+@Controller
+@RequestMapping("/receipts")
+@CrossOrigin("*")
+public class ReceiptController {
+    private static Logger logger = Logger.getLogger(String.valueOf(ReceiptController.class));
+    @Autowired
+    ReceiptService receiptService;
+
+    @PostMapping("/add-receipt")
+    public ResponseEntity save(@RequestBody Receipt receipt) {
+        receiptService.save(receipt);
+        logger.info("Save product to receipt");
+        return new ResponseEntity(HttpStatus.OK);
+    }
+
+    @GetMapping("/find-all-by-user")
+    public ResponseEntity<List<Receipt>> findAllByUser(@RequestParam Long userId) {
+        return new ResponseEntity(receiptService.findAllByUserId(userId),HttpStatus.OK);
+    }
+
+}
