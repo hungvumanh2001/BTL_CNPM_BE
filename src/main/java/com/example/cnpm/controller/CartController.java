@@ -19,22 +19,6 @@ public class CartController {
     @Autowired
     private CartService service;
 
-    @PutMapping("/confirm")
-    public ResponseEntity confirmOrder(@RequestParam Long id) {
-        Optional<Cart> carts = service.findById(id);
-        if (carts.isPresent()) {
-            //nếu đã thêm vào giỏ thì chuyển thành đặt hàng
-            //còn k thì chuyển thành xác nhận đơn hàng
-            //1 bt
-            //2 giỏ hàng
-            //3 mua thành công
-
-            carts.get().setStatus(carts.get().getStatus() == 1 ? 2 : 3);
-            service.save(carts.get());
-            return new ResponseEntity(HttpStatus.OK);
-        }
-        throw new NullPointerException("null cart id");
-    }
 
     @PostMapping("/add-cart")
     public ResponseEntity findAllByStatus(@RequestBody Cart cart)

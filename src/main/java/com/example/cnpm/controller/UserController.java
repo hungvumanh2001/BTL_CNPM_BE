@@ -50,6 +50,7 @@ public class UserController {
         return new ResponseEntity<>(user,HttpStatus.OK);
     }
 
+    //chi tiết thông tin nhân viên
     @GetMapping("/id")
     public ResponseEntity<User>detailUser(@RequestParam Long id)
     {
@@ -98,6 +99,7 @@ public class UserController {
         return new ResponseEntity<>(user, HttpStatus.CREATED);
     }
 
+    //login
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody User user) {
         Authentication authentication = authenticationManager.authenticate(

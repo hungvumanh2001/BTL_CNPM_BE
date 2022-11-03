@@ -12,18 +12,12 @@ import java.util.Optional;
 public class CartServiceImpl implements CartService {
     @Autowired
     private CartRepository repository;
-    @Override
-    public Iterable<Cart> findAllByUserIdAndStatus(Long id, int status) {
-        return repository.findAllByUserIdAndStatus(id,status);
-    }
+
 
     @Override
     public void save(Cart cart) {
         repository.save(cart);
     }
 
-    @Override
-    public Optional<Cart> findById(Long id) {
-        return repository.findById(id);
-    }
+
 }
