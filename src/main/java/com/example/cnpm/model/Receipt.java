@@ -43,7 +43,7 @@ public class Receipt {
         this.date = date;
     }
 
-    public Receipt(Receipt entity, boolean collapse) {
+    public Receipt(Receipt entity) {
         this.id = entity.getId();
         this.user = entity.getUser();
         this.fullname = entity.getFullname();
