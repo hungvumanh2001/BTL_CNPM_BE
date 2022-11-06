@@ -66,7 +66,7 @@ public class ProductController {
     }
 
     @GetMapping("/find-product-desc")
-    public ResponseEntity<Iterable<Product>> findAllProductOrderByPriceDesc(@PageableDefault(size = 3) Pageable page) {
+    public ResponseEntity<Iterable<Product>> findAllProductOrderByPriceDesc(@PageableDefault(size = 9) Pageable page) {
         Iterable<Product> products = productService.findAllProductOrderByPriceDesc(page);
         if (products == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -74,7 +74,7 @@ public class ProductController {
     }
 
     @GetMapping("/find-product-asc")
-    public ResponseEntity<Iterable<Product>> findAllProductOrderByPriceAsc(@PageableDefault(size = 3) Pageable page) {
+    public ResponseEntity<Iterable<Product>> findAllProductOrderByPriceAsc(@PageableDefault(size = 9) Pageable page) {
         Iterable<Product> products = productService.findAllProductOrderByPriceAsc(page);
         if (products == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -82,7 +82,7 @@ public class ProductController {
     }
 
     @GetMapping("/sort-product-by-name")
-    public ResponseEntity<Iterable<Product>> findAllProductOrderByName(@PageableDefault(size = 3) Pageable page) {
+    public ResponseEntity<Iterable<Product>> findAllProductOrderByName(@PageableDefault(size = 9) Pageable page) {
         Iterable<Product> products = productService.findAllProductOrderByName(page);
         if (products == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
