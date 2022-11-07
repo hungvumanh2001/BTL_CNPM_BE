@@ -5,9 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="913fac8e-6295-4eab-8618-4b7a55c5fb1c" name="Changes" comment="fix reciept model">
+
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cnpm/controller/ReceiptController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cnpm/repository/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cnpm/repository/ReceiptRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cnpm/service/Impl/ProductServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cnpm/service/Impl/ReceiptServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cnpm/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cnpm/service/ReceiptService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cnpm/model/Receipt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cnpm/model/Receipt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cnpm/model/ReceiptDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cnpm/model/ReceiptDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/cnpm/controller/CartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/cnpm/controller/CartController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/cnpm/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/cnpm/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/cnpm/security/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/cnpm/security/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/cnpm/service/Impl/CartServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/cnpm/service/Impl/CartServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cnpm/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cnpm/controller/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cnpm/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cnpm/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cnpm/repository/CartRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cnpm/repository/CartRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cnpm/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cnpm/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cnpm/service/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cnpm/service/CartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cnpm/service/Impl/CartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cnpm/service/Impl/CartServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +36,26 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -54,12 +92,18 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "spring.configuration.checksum": "c2af2a76c058a7768cba46b050a3bd04"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -67,6 +111,22 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Javaweb\BTL_CNPM_BE\src\main\java\com\example\cnpm\service\Impl" />
+      <recent name="E:\Javaweb\BTL_CNPM_BE\src\main\java\com\example\cnpm\service" />
+      <recent name="E:\Javaweb\BTL_CNPM_BE\src\main\java\com\example\cnpm\repository" />
+      <recent name="E:\Javaweb\BTL_CNPM_BE\src\main\java\com\example\cnpm" />
+      <recent name="E:\Javaweb\BTL_CNPM_BE\src\main\java\com\example\cnpm\security\jwt" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.cnpm.controller" />
+      <recent name="com.example.cnpm.service" />
+      <recent name="com.example.cnpm.service.Impl" />
+      <recent name="com.example.cnpm.security" />
+      <recent name="com.example.cnpm.repository" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="CnpmApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="CNPM.main" />
@@ -85,6 +145,11 @@
       <option name="presentableId" value="Default" />
       <updated>1667228609223</updated>
       <workItem from="1667228612989" duration="3695000" />
+      <workItem from="1667309072143" duration="10362000" />
+      <workItem from="1667357312039" duration="603000" />
+      <workItem from="1667361956241" duration="37000" />
+      <workItem from="1667437889053" duration="1542000" />
+      <workItem from="1667484311810" duration="6296000" />
     </task>
     <task id="LOCAL-00001" summary="fix reciept model">
       <created>1667229082543</created>
@@ -120,5 +185,10 @@
         <PinnedItemInfo parentTag="java.util.Optional" memberName="value" />
       </pinned-members>
     </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="repository.findAll()" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
