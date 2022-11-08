@@ -43,6 +43,17 @@ public class Receipt {
         this.date = date;
     }
 
+    public Receipt(Receipt entity) {
+        this.id = entity.getId();
+        this.user = entity.getUser();
+        this.fullname = entity.getFullname();
+        this.sdt = entity.getSdt();
+        this.address = entity.getAddress();
+        this.status = entity.getStatus();
+        this.priceTotal = entity.getPriceTotal();
+        this.date = entity.getDate();
+    }
+
     public Long getId() {
         return id;
     }
