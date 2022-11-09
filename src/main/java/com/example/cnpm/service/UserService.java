@@ -53,4 +53,5 @@ public interface UserService extends UserDetailsService {
 
     User findByUsername(String user);
 
+    void delete(Long id);
 }

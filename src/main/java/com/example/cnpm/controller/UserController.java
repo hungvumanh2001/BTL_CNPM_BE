@@ -55,7 +55,12 @@ public class UserController {
             return new ResponseEntity<>(user, HttpStatus.NOT_FOUND);
         return new ResponseEntity<>(user,HttpStatus.OK);
     }
-
+    @DeleteMapping()
+    public ResponseEntity deleteUser(@RequestParam Long id)
+    {
+        userService.delete(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
     //chi tiết thông tin nhân viên
     @GetMapping("/id")
     public ResponseEntity<User>detailUser(@RequestParam Long id)
