@@ -15,7 +15,6 @@ public interface ReceiptService {
     void save(Receipt receipt);
 
 
-    Iterable<Receipt> findAllByStatusAndDateBetween(Date start, Date end);
 
 
     List<Receipt> findAllByUserId(Long userId);

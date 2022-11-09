@@ -1,4 +1,4 @@
-package com.example.cnpm.service.impl;
+package com.example.cnpm.service.Impl;
 
 import com.example.cnpm.model.Receipt;
 import com.example.cnpm.model.ReceiptDetail;
@@ -8,10 +8,7 @@ import com.example.cnpm.service.ReceiptService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class ReceiptServiceImpl implements ReceiptService {
@@ -19,6 +16,18 @@ public class ReceiptServiceImpl implements ReceiptService {
     ReceiptRepository receiptRepository;
     @Autowired
     UserRepository userRepository;
+
+    @Override
+    public Optional<Receipt> findById(Long id) {
+       return receiptRepository.findById(id);
+
+    }
+
+    @Override
+    public Iterable<Receipt> findAll() {
+        return receiptRepository.findAll();
+    }
+
     @Override
     public void save(Receipt model) {
         Receipt receipt = new Receipt();
