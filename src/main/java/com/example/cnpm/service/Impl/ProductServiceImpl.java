@@ -65,4 +65,13 @@ public class ProductServiceImpl implements ProductService {
     public Page<Product> findAllProductOrderByName(Pageable page) {
         return repository.findAllProductOrderByName(page);
     }
+    @Override
+    public Product remove(Long id) {
+        if(id!=null ){
+            if(repository.findById(id).isPresent()){
+                repository.deleteById(id);
+            }
+        }
+        return null;
+    }
 }

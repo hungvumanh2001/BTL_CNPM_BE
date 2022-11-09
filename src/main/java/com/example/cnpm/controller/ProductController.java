@@ -98,4 +98,9 @@ public class ProductController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         return new ResponseEntity<>(products, HttpStatus.OK);
     }
+    @RequestMapping(value = "/{productId}", method = RequestMethod.DELETE)
+    public Product removeHoSok(@PathVariable("productId") String productId) {
+        Product pr = productService.remove(new Long(productId));
+        return pr;
+    }
 }
