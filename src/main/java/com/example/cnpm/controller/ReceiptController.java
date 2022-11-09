@@ -43,6 +43,11 @@ public class ReceiptController {
         }
         throw new NullPointerException("null cart id");
     }
+    @GetMapping("/find-all-by-StatusAndUserId")
+    public ResponseEntity findAllByStatusAndUserId(@RequestParam int status, @RequestParam Long userId) {
+        service.findAllByStatusAndUserId(status,userId);
+        return new ResponseEntity(HttpStatus.OK);
+    }
 
 
     @PostMapping("/add-receipt")

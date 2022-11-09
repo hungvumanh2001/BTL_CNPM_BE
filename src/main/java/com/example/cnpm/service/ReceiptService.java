@@ -16,6 +16,6 @@ public interface ReceiptService {
 
 
 
-
+    Iterable<Receipt>findAllByStatusAndUserId(int status,Long userId);
     List<Receipt> findAllByUserId(Long userId);
 }

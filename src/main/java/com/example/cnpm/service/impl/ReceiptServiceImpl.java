@@ -60,6 +60,11 @@ public class ReceiptServiceImpl implements ReceiptService {
     }
 
     @Override
+    public Iterable<Receipt> findAllByStatusAndUserId(int status, Long userId) {
+        return receiptRepository.findAllByStatusAndUserId(status,userId);
+    }
+
+    @Override
     public List<Receipt> findAllByUserId(Long userId) {
         return receiptRepository.findAllByUserId(userId);
     }
