@@ -72,20 +72,25 @@ public class UserController {
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
-    //update account or register
     @PostMapping("/change-account")
-    public ResponseEntity<User> createUser(@RequestBody User user,@RequestParam boolean update) throws Exception {
+    public ResponseEntity<User> update(@RequestBody User user)
+    {
+        Optional<User>users=userService.findById(user.getId());
+        if(users.isPresent())
+        {
+            userService.save(user);
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+    //update account or register
+    @PostMapping("/register")
+    public ResponseEntity<User> createUser(@RequestBody User user) throws Exception {
         Iterable<User> users = userService.findAll();
         //lấy ra để so xem có cái nào trungh khôg
         for (User currentUser : users) {
             if (currentUser.getUsername().equals(user.getUsername())) {
-                if(update) {
-                    userService.save(user);
-                    //update thành công
-                    return new ResponseEntity<>(HttpStatus.OK);
-                }
-                else
-                     throw new Exception("Username đã tồn tại");
+                throw new Exception("Username đã tồn tại");
             }
         }
         if (!userService.isCorrectConfirmPassword(user)) {
