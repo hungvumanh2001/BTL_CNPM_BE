@@ -91,9 +91,17 @@ public class ProductController {
         return new ResponseEntity<>(products, HttpStatus.OK);
     }
 
-    @GetMapping("/sort-product-by-name")
-    public ResponseEntity<Iterable<Product>> findAllProductOrderByName(@PageableDefault(size = 9) Pageable page) {
-        Iterable<Product> products = productService.findAllProductOrderByName(page);
+    @GetMapping("/sort-product-by-name-desc")
+    public ResponseEntity<Iterable<Product>> findAllProductOrderByNameDesc(@PageableDefault(size = 9) Pageable page) {
+        Iterable<Product> products = productService.findAllProductOrderByNameDesc(page);
+        if (products == null)
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(products, HttpStatus.OK);
+    }
+
+    @GetMapping("/sort-product-by-name-asc")
+    public ResponseEntity<Iterable<Product>> findAllProductOrderByNameAsc(@PageableDefault(size = 9) Pageable page) {
+        Iterable<Product> products = productService.findAllProductOrderByNameAsc(page);
         if (products == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         return new ResponseEntity<>(products, HttpStatus.OK);

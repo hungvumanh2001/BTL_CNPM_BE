@@ -21,7 +21,9 @@ public interface ProductService {
 
     Page<Product> findAllProductOrderByPriceAsc(Pageable pageable);
 
-    Page<Product> findAllProductOrderByName(Pageable pageable);
+    Page<Product> findAllProductOrderByNameDesc(Pageable pageable);
+
+    Page<Product> findAllProductOrderByNameAsc(Pageable pageable);
     Product remove(Long id);
 
 }

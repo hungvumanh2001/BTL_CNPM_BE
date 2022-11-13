@@ -27,5 +27,8 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     Page<Product> findAllProductOrderByPriceAsc(Pageable pageable);
 
     @Query("select u from Product u order by u.title desc ")
-    Page<Product> findAllProductOrderByName(Pageable pageable);
+    Page<Product> findAllProductOrderByNameDesc(Pageable pageable);
+
+    @Query("select u from Product u order by u.title asc ")
+    Page<Product> findAllProductOrderByNameAsc(Pageable pageable);
 }
