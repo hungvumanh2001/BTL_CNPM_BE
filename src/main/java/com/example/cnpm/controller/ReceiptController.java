@@ -33,19 +33,18 @@ public class ReceiptController {
         if (receipt.isPresent()) {
             //nếu đã thêm vào giỏ thì chuyển thành đặt hàng
             //còn k thì chuyển thành xác nhận đơn hàng
-            //1 bt
-            //2 mua
-            //3 đã xác nhận
+            //0 chưa xác nhận
+            //1 đã xác nhận
 
-            receipt.get().setStatus(3);
+            receipt.get().setStatus(1);
             service.save(receipt.get());
             return new ResponseEntity(HttpStatus.OK);
         }
         throw new NullPointerException("null cart id");
     }
-    @GetMapping("/find-all-by-StatusAndUserId")
-    public ResponseEntity findAllByStatusAndUserId(@RequestParam int status, @RequestParam Long userId) {
-        service.findAllByStatusAndUserId(status,userId);
+    @GetMapping("/find-all-by-Status")
+    public ResponseEntity findAllByStatus(@RequestParam int status) {
+        service.findAllByStatus(status);
         return new ResponseEntity(HttpStatus.OK);
     }
 
